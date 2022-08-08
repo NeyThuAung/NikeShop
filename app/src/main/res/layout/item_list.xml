@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp"
+
+    android:layout_marginHorizontal="7dp"
+    android:layout_marginTop="10dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:background="#f5f5f5"
+        android:paddingHorizontal="7dp"
+        >
+
+
+            <ImageView
+                android:id="@+id/img_item"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/airmax"
+                android:scaleType="centerCrop"
+                android:background="#f5f5f5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sale_level"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/img_item"
+                app:layout_constraintStart_toStartOf="@id/img_item"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="Best Seller"
+                android:textSize="10sp"
+                android:textColor="@color/yello"
+                android:layout_marginHorizontal="20dp"/>
+            <TextView
+                android:id="@+id/tv_shoeName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/sale_level"
+                app:layout_constraintStart_toStartOf="@id/img_item"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="Nike Air Max"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_shoeSub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_shoeName"
+                app:layout_constraintStart_toStartOf="@id/tv_shoeName"
+                android:textSize="12sp"
+                android:text="Elite FG" />
+
+            <ImageView
+                android:id="@+id/card"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintStart_toEndOf="@id/tv_shoePrice"
+                android:layout_marginLeft="90dp"
+                android:backgroundTint="@color/cartColor"
+                app:layout_constraintTop_toTopOf="@id/tv_shoePrice"
+                app:layout_constraintBottom_toBottomOf="@id/tv_shoePrice"
+                app:layout_constraintTop_toBottomOf="@id/tv_shoeSub"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@drawable/cart"
+                />
+
+            <TextView
+                android:id="@+id/tv_shoePrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_shoeSub"
+                app:layout_constraintStart_toStartOf="@id/tv_shoeName"
+                android:layout_marginTop="10dp"
+                android:text="$799"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                app:layout_constraintTop_toBottomOf="@id/tv_shoePrice"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:numStars="5"
+                android:rating="2.5"
+                android:stepSize="1.0"
+                android:progressTint="#ffa010"
+                android:progressBackgroundTint="#3c343d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                app:layout_constraintLeft_toLeftOf="@id/tv_shoePrice"/>
+            <CheckBox
+                android:id="@+id/fav_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:button="@drawable/selector_wishlist"
+                 app:useMaterialThemeColors="false"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

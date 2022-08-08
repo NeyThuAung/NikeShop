@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--https://material.io/components/text-fields/android#outlined-text-field-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <ImageView
+        android:id="@+id/tv_Title"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/vector"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_ph_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@id/tv_Title"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_ph_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Phone Number"
+            android:drawableStart="@drawable/phone"
+            android:drawablePadding="10dp"
+            android:maxLength="11"
+            android:nextFocusDown="@id/et_password"
+            android:inputType="phone"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:passwordToggleEnabled="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@id/til_ph_no">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Password"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="10dp"
+            android:nextFocusDown="@id/btn_login"
+            android:inputType="textPassword"
+            android:importantForAutofill="no" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@id/til_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/tv_Remember"
+        android:text="Remember Me"
+        app:layout_constraintTop_toTopOf="@id/checkBox"
+        app:layout_constraintLeft_toRightOf="@id/checkBox"
+        app:layout_constraintBottom_toBottomOf="@id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/tv_forgtPass"
+        app:layout_constraintTop_toBottomOf="@id/til_password"
+        app:layout_constraintRight_toRightOf="@id/til_password"
+        android:layout_marginTop="16dp"
+        android:text="Forgot Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgtPass"/>
+
+    <View
+        android:id="@+id/v_line"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintTop_toTopOf="@id/tv_Or"
+        app:layout_constraintBottom_toBottomOf="@id/tv_Or"
+        app:layout_constraintLeft_toLeftOf="@id/btn_login"
+        app:layout_constraintRight_toLeftOf="@id/tv_Or"
+        android:layout_width="150dp"
+        android:background="@color/black"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:id="@+id/tv_Or"
+        android:text="OR"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        app:layout_constraintLeft_toRightOf="@id/v_line"
+        app:layout_constraintRight_toLeftOf="@id/v_line2"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/v_line2"
+        app:layout_constraintTop_toTopOf="@id/tv_Or"
+        app:layout_constraintBottom_toBottomOf="@id/tv_Or"
+        app:layout_constraintLeft_toRightOf="@id/tv_Or"
+        app:layout_constraintRight_toRightOf="@id/btn_login"
+        android:layout_width="150dp"
+        android:background="@color/black"
+        android:layout_height="1dp"/>
+
+    <ImageView
+        android:id="@+id/iv_Facebook"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:src="@drawable/facebook2"
+        app:layout_constraintTop_toBottomOf="@id/v_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/iv_twitter"
+        android:layout_marginTop="50dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"/>
+    <ImageView
+        android:id="@+id/iv_twitter"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:src="@drawable/twitter1"
+        app:layout_constraintTop_toTopOf="@id/iv_Facebook"
+        app:layout_constraintLeft_toRightOf="@id/iv_Facebook"
+        app:layout_constraintRight_toLeftOf="@id/iv_google"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"/>
+    <ImageView
+        android:id="@+id/iv_google"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:src="@drawable/google"
+        app:layout_constraintTop_toTopOf="@id/iv_Facebook"
+        app:layout_constraintLeft_toRightOf="@id/iv_twitter"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="45dp"
+        android:layout_height="45dp"/>
+
+    <TextView
+        android:id="@+id/tv_create1"
+        android:text="Don't have an account ?"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/iv_Facebook"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_create2"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_create2"
+        app:layout_constraintTop_toTopOf="@id/tv_create1"
+        app:layout_constraintBottom_toBottomOf="@id/tv_create1"
+        android:text="Register Now"
+        android:textColor="#34bf49"
+        android:textSize="15sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintLeft_toRightOf="@id/tv_create1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
