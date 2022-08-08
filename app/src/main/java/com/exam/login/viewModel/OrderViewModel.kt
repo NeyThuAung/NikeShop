@@ -18,7 +18,7 @@ class OrderViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun getOrderData() : LiveData<OrderData>{
+    fun getOrderData() : LiveData<List<OrderData>>{
         return orderRepository.getOrderData()
     }
 }

@@ -18,5 +18,5 @@ interface OrderDataDao {
     )
 
     @Query( "SELECT * FROM OrderData")
-    fun getOrderData(): LiveData<OrderData>
+    fun getOrderData(): LiveData<List<OrderData>>
 }

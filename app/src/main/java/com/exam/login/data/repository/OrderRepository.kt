@@ -13,7 +13,7 @@ class OrderRepository(var application: Application) {
         db.orderDataDao.insertOrderData(orderData)
     }
 
-    fun getOrderData(): LiveData<OrderData> {
+    fun getOrderData(): LiveData<List<OrderData>> {
         return db.orderDataDao.getOrderData()
     }
 
