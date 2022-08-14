@@ -16,12 +16,19 @@ import com.exam.login.data.entity.ShoeData
 
 import com.exam.login.databinding.ActivityListBinding
 import com.exam.login.detail.DetailActivity
+import com.exam.login.login.LoginActivity
+import com.exam.login.util.AppSharedPreference
 import com.exam.login.viewModel.ShoeViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlin.collections.ArrayList
 
 class ListActivity : AppCompatActivity(),ShoeAdapter.ItemClickInterface {
     private lateinit var binding: ActivityListBinding
     private lateinit var shoeAdapter: ShoeAdapter
+    private  val sharedPref : AppSharedPreference by lazy {
+        AppSharedPreference(this)
+    }
+    private var isLogin = false
     private val viewModel : ShoeViewModel by viewModels()
     private lateinit var shoeList : ArrayList<ShoeData>
     //val displayList= ArrayList<Shoe>()
@@ -31,6 +38,7 @@ class ListActivity : AppCompatActivity(),ShoeAdapter.ItemClickInterface {
        // displayList.addAll(TempData.shoeList)
         binding = ActivityListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        isLogin = sharedPref.getValueBoolean("IsLogin",false)
         shoeList = arrayListOf()
 
         initRec()
@@ -45,10 +53,25 @@ class ListActivity : AppCompatActivity(),ShoeAdapter.ItemClickInterface {
         }
 
 
-        findViewById<ImageView>(R.id.ic_filter).setOnClickListener {
-            val intent = Intent(this, OrderActivity::class.java)
-            startActivity(intent)
+        binding.icFilter.setOnClickListener {
+            if (isLogin){
+                val intent = Intent(this, OrderActivity::class.java)
+                startActivity(intent)
+
+            }else{
+                val intent= Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
         }
+
+        binding.icLogout.setOnClickListener {
+            sharedPref.clearSharedPreference()
+            isLogin = false
+            Snackbar.make(binding.root,"Logout successful.",1000).show()
+        }
+
+
+
 
     }
 

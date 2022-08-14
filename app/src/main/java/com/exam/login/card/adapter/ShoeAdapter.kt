@@ -48,7 +48,7 @@ class ShoeAdapter(
             binding.saleLevel.text=shoeData.salelevel
             binding.tvShoeName.text=shoeData.name
             binding.tvShoeSub.text=shoeData.subname
-            binding.tvShoePrice.text=shoeData.price
+            binding.tvShoePrice2.text=shoeData.price.toString()
 
             binding.root.setOnClickListener {
                 Log.i("ADAPTER","bind : $adapterPosition")

@@ -1,12 +1,15 @@
 package com.exam.login.card
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.exam.login.SucessActivity
 import com.exam.login.card.adapter.OrderAdapter
 import com.exam.login.data.entity.OrderData
 import com.exam.login.databinding.ActivityOrderBinding
+import com.exam.login.databinding.ActivitySucessBinding
 import com.exam.login.viewModel.OrderViewModel
 
 class OrderActivity : AppCompatActivity() {
@@ -25,14 +28,19 @@ class OrderActivity : AppCompatActivity() {
         orderList = arrayListOf()
         initRec()
         getOrderData()
+        onClick()
+    }
+    private fun onClick(){
 
-
-
-
+        binding.btnBuy.setOnClickListener {
+            val intent = Intent(this@OrderActivity,SucessActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun initRec(){
-        orderAdapter= OrderAdapter(orderList)
+        orderAdapter= OrderAdapter(orderList,orderViewModel)
         binding.recOrder.also {
             it.setHasFixedSize(true)
             it.layoutManager= LinearLayoutManager(this@OrderActivity)
@@ -46,4 +54,5 @@ class OrderActivity : AppCompatActivity() {
             orderAdapter.setData(orderList)
         }
     }
+
 }

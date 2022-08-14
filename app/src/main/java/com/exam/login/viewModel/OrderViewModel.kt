@@ -21,4 +21,16 @@ class OrderViewModel(application: Application) : AndroidViewModel(application) {
     fun getOrderData() : LiveData<List<OrderData>>{
         return orderRepository.getOrderData()
     }
+
+    fun deleteAllOrders(){
+        viewModelScope.launch {
+            orderRepository.deleteAll()
+        }
+    }
+
+    fun deleteOrder(id :Int){
+        viewModelScope.launch {
+            orderRepository.deleteOrder(id)
+        }
+    }
 }

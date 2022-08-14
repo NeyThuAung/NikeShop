@@ -19,4 +19,11 @@ interface OrderDataDao {
 
     @Query( "SELECT * FROM OrderData")
     fun getOrderData(): LiveData<List<OrderData>>
+
+    @Query("DELETE FROM OrderData WHERE orderId=:id")
+    suspend fun deleteOrder(id : Int)
+
+    @Query("DELETE FROM OrderData")
+    suspend fun deleteAllOrders()
+
 }

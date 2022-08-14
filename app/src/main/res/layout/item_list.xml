@@ -75,7 +75,6 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:src="@drawable/cart"
                 />
-
             <TextView
                 android:id="@+id/tv_shoePrice"
                 android:layout_width="0dp"
@@ -83,7 +82,18 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_shoeSub"
                 app:layout_constraintStart_toStartOf="@id/tv_shoeName"
                 android:layout_marginTop="10dp"
-                android:text="$799"
+                android:text="$"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_shoePrice2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_shoeSub"
+                app:layout_constraintLeft_toRightOf="@id/tv_shoePrice"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"
+                android:text="799"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 

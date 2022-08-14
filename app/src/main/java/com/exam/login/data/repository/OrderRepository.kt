@@ -17,5 +17,12 @@ class OrderRepository(var application: Application) {
         return db.orderDataDao.getOrderData()
     }
 
+    suspend fun deleteOrder(id : Int){
+        db.orderDataDao.deleteOrder(id)
+    }
+
+    suspend fun deleteAll() {
+        db.orderDataDao.deleteAllOrders()
+    }
 
 }

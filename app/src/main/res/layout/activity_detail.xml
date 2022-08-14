@@ -7,12 +7,21 @@
     tools:context=".detail.DetailActivity">
 
     <ImageView
+        android:id="@+id/nike_logo"
+        android:src="@drawable/nike"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="15dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
         android:id="@+id/bag"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
-        android:src="@drawable/bag"
+        android:src="@drawable/cart"
         android:layout_marginBottom="10dp"
         android:layout_width="27dp"
         android:layout_height="27dp"/>
@@ -61,8 +70,21 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tv_shoeSub"
-        app:layout_constraintStart_toStartOf="@id/tv_shoeSub"
-        android:text="$799"
+        app:layout_constraintLeft_toRightOf="@id/tv_shoePrice2"
+        android:text="799"
+        android:layout_marginLeft="5dp"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        />
+    <TextView
+        android:id="@+id/tv_shoePrice2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_shoeSub"
+        app:layout_constraintLeft_toLeftOf="@id/tv_shoeSub"
+        android:text="$"
         android:textSize="40sp"
         android:fontFamily="sans-serif-light"
         android:textColor="@color/black"
@@ -122,7 +144,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:backgroundTint="#403f3f"
-        android:text="Add to cart"
+        android:text="Add To Cart"
         android:layout_marginTop="20dp"
         android:drawableStart="@drawable/cart"
         android:textAllCaps="false"

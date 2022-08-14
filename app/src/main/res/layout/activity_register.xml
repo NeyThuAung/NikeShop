@@ -214,6 +214,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Register Now"
+            android:backgroundTint="#403f3f"
             android:textStyle="bold"
             android:textAllCaps="false"
             app:cornerRadius="10dp"
